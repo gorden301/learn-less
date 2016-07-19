@@ -1,0 +1,49 @@
+@charset"utf-8";
+body{
+	background-color:@test_color;
+}
+.test{
+	height:100px;
+	width: 100px;
+	background-color:@test;
+	.border(10px);
+}
+//混合带参数默认值
+.border(@border-width:5px){
+	border:solid yellow @border-width;
+}
+
+@test_color:white;
+@test:black;
+
+.tran{
+	height: 0;
+	width: 0;
+	overflow: hidden;
+	border-width: 10px;
+	border-color: red transparent transparent transparent; 
+	border-style: solid;
+}
+
+.pos(e){
+	position: relative;
+}
+
+.pos(a){
+	position: absolute;
+}
+
+.pos(f){
+	position: fixed;
+}
+
+.pos(@_){
+	height: 200px;
+	width: 200px;
+	background-color: green;
+}
+
+.pipei{
+	.pos(a);
+}
+
